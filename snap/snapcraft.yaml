@@ -1,0 +1,21 @@
+name: lm75sensors
+version: "1.0.0"
+summary: lm75 Application Snap
+description: A SNAP that simply reads lm75 temperature and sends vi MQTT.
+architectures: [armhf]
+confinement: strict
+apps:
+  lm75sensor:
+    command: lm75sensor
+    plugs: [network,i2c]
+
+parts:
+  lm75sensor:
+    plugin: nodejs
+    node-packages:
+      - hello-node-snap
+  tools:
+    source: bin/
+    plugin: dump
+    organize:
+        connect-interfaces: bin/connect-interfaces

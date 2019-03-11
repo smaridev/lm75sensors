@@ -1,0 +1,31 @@
+{
+  "name": "lm75sensor",
+  "version": "1.0.0",
+  "description": "A command that simply prints lm75 sensor temperature ",
+  "main": "lm75sensor.js",
+  "author": " ",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node ./healthmon.js",
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=8.12.0"
+  },
+  "files": [
+    "lm75sensor.js",
+    "config.json"
+  ],
+  "bin": "lm75sensor.js",
+  "dependencies": { 
+   "i2c-bus": "^4.0.8",
+   "mqtt": "^2.18.8" 	
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0"
+  }
+}

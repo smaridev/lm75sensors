@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Connecting interfaces"
+snap connect i2c-app1:i2c pi3:i2c-1
