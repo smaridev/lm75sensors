@@ -115,10 +115,11 @@ const sendSensor1Info = (appConfig) => {
 
   console.log( 'LM75(1) Temp (%): ' + toCelsius(rawTemp) );
   const msg = JSON.stringify({
-    tpid: getserial(),
-    timestamp: Math.round((new Date()).getTime() / 1000),
-    sensor1_desc: "Lm75_temperature near Memory",
-    sensor1_temp:  toCelsius(rawTemp)
+		tpid: getserial(),
+		message: "iot-gw/lm75/sensor1Topic",
+		timestamp: Math.round((new Date()).getTime() / 1000),
+		sensor1_desc: "Lm75_temperature near Memory",
+		sensor1_temp:  toCelsius(rawTemp)
   });
 
   mqttClient.publish("lm75/sensor1Topic", msg);
@@ -135,10 +136,11 @@ const sendSensor2Info = (appConfig) => {
 
   console.log( 'LM75(2) Temp (%): ' +  toCelsius(rawTemp) );
   const msg = JSON.stringify({
-    tpid: getserial(),
-    timestamp: Math.round((new Date()).getTime() / 1000),
-    sensor2_desc: "Lm75_temperature near Cpu",
-    sensor2_temp:  toCelsius(rawTemp)
+		tpid: getserial(),
+		message: "iot-gw/lm75/sensor2Topic",
+		timestamp: Math.round((new Date()).getTime() / 1000),
+		sensor2_desc: "Lm75_temperature near Cpu",
+		sensor2_temp:  toCelsius(rawTemp)
   });
 
   mqttClient.publish("lm75/sensor2topic", msg);
